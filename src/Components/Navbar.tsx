@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import MantraOffer from "../assets/Home/Mantra offer.png";
+import brandLogo from "../assets/Home/brand logo.png"; // Corrected path
 import { useState, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className={isMobile ? "navbar-mobile" : "navbar-web"}>
       <div className={isMobile ? "brand-logo-mobile" : "brand-logo-web"}>
-        <img src={MantraOffer} alt="Mantra Offer" />
+        <img src={brandLogo} alt="Mantra Offer" />
         {isMobile && (
           <button className="navbar-toggle" onClick={toggleNavbar}>
             {isOpen ? <IoClose size={30} /> : <IoMenu size={30} />}

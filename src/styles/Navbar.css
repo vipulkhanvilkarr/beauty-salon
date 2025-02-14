@@ -10,35 +10,15 @@
   }
 }
 
-@keyframes fadeInSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInSlideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Web view styles */
 .navbar-web {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: #ffffff; /* Add background color */
   color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
 }
 
 .brand-logo-web {
@@ -62,13 +42,26 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+
+.navbar-links-web ul li {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
 }
 
 .navbar-links-web ul li a {
   text-decoration: none;
   color: #05152d;
-  font-weight: bold;
-  animation: fadeInSlideIn 0.5s ease-in-out;
+  font-weight: 600; /* Set font weight to SemiBold */
+  font-style: italic; /* Set font style to Italic */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+
+.navbar-links-web ul li a:hover {
+  color: #0000ff; /* Change color on hover to blue */
 }
 
 /* Mobile view styles */
@@ -76,8 +69,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 20px;
+  background-color: #ffffff; /* Add background color */
   color: rgb(0, 0, 0);
   width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
 }
 
 .brand-logo-mobile {
@@ -121,37 +117,18 @@
   flex-direction: column;
   width: 100%;
   align-items: center; /* Center align the list items */
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+.navbar-links-mobile ul:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
 }
 
 .navbar-links-mobile ul li {
   width: 100%;
   text-align: center; /* Center align the list items */
   margin: 1.5rem 0;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.5s ease-in-out;
-}
-
-.navbar-links-mobile.open ul li {
-  opacity: 1;
-  transform: translateX(0);
-  animation: fadeInSlideDown 0.5s ease-in-out;
-}
-
-.navbar-links-mobile.open ul li:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.navbar-links-mobile.open ul li:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.navbar-links-mobile.open ul li:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.navbar-links-mobile.open ul li:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.navbar-links-mobile.open ul li:nth-child(5) {
-  animation-delay: 0.5s;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
 }
 
 .navbar-links-mobile ul li a {
@@ -161,7 +138,17 @@
   text-align: center; /* Center align the text */
   text-decoration: none;
   color: #05152d;
-  font-weight: bold;
+  font-weight: 600; /* Set font weight to SemiBold */
+  font-style: italic; /* Set font style to Italic */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+.navbar-links-mobile ul li:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.navbar-links-mobile ul li a:hover {
+  color: #0000ff; /* Change color on hover to blue */
 }
 
 /* Ensure no transition effect on web view */
