@@ -1,20 +1,259 @@
 .home {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Optional: Add a background color */
+    padding-left: 10px; /* Decrease padding from left */
+    padding-right: 10px; /* Decrease padding from right */
+    padding-top: 80px; /* Add padding to account for the fixed navbar */
   }
   
-  .hero img {
+  .home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow to make it look like a card */
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, float 3s ease-in-out infinite; /* Add animation */
+  }
+  
+  .home-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%; /* Ensure the image container takes full height */
+    margin-right: 40px; /* Increase distance between image and content */
+  }
+  
+  .home-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: float 3s ease-in-out infinite; /* Add animation */
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+  }
+  
+  .home-content {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    animation: fadeIn 2s ease-in-out; /* Add animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+  }
+  
+  .home-content h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    align-items: end;
+    padding-bottom: 10px;
+  }
+  
+  .home-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #555;
+    align-items: end;
+  }
+  
+  /* Slide-in Animations */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 1s ease-in-out;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 1s ease-in-out;
+  }
+  
+  /* Fade-in Letters Animation */
+  @keyframes fadeInLetters {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-letters span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInLetters 0.5s forwards;
+  }
+  
+  /* Add more nth-child rules as needed for each letter */
+  .fade-in-letters span:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .fade-in-letters span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .fade-in-letters span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .fade-in-letters span:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .fade-in-letters span:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  .fade-in-letters span:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  
+  .fade-in-letters span:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  
+  .fade-in-letters span:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+  
+  .fade-in-letters span:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+  
+  .fade-in-letters span:nth-child(10) {
+    animation-delay: 1s;
+  }
+  
+  /* Typewriter Effect */
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blinkTextCursor {
+    from { border-right-color: rgba(0, 0, 0, 0.75); }
+    to { border-right-color: transparent; }
+  }
+  
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 0.15em solid rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    animation: typewriter 4s steps(40, end) infinite, blinkTextCursor 500ms steps(40, end) infinite normal;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Mobile view styles */
+  .home-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10px; /* Add padding for mobile view */
+    padding-top: 80px; /* Add padding to account for the fixed navbar */
+  }
+  
+  .home-container-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Add shadow to make it look like a card */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, float 3s ease-in-out infinite; /* Add animation */
+  }
+  
+  .home-image-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px; /* Add margin to separate image and content */
+  }
+  
+  .home-image-mobile {
     width: 100%;
     height: auto;
+    object-fit: cover;
+    animation: fadeIn 1s ease-in-out; /* Add animation */
   }
   
-  .book-btn {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    cursor: pointer;
+  .home-content-mobile {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Add animation */
   }
-  .background{
-    padding: 10px;
-    justify-content: center;
+  
+  .home-title-mobile {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 10px;
+    animation: fadeIn 1s ease-in-out, float 3s ease-in-out infinite; /* Add animation */
+  }
+  
+  .home-subtitle-mobile {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    animation: fadeIn 1s ease-in-out, float 3s ease-in-out infinite; /* Add animation */
   }

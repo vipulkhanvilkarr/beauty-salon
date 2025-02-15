@@ -10,22 +10,36 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Web view styles */
 .navbar-web {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ffffff; /* Add background color */
+  background-color: #f0f0f0; /* Optional: Add a background color */
   color: rgb(0, 0, 0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .brand-logo-web {
   display: flex;
   align-items: center;
   z-index: 1002;
-  animation: scaleIn 0.5s ease-in-out;
+  animation: scaleIn 0.5s ease-in-out, float 3s ease-in-out infinite; /* Add 3D animation */
+  margin-left: 20px;
 }
 
 .brand-logo-web img {
@@ -35,7 +49,7 @@
 .navbar-links-web {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Center the ul element */
 }
 
 .navbar-links-web ul {
@@ -44,8 +58,8 @@
   flex-wrap: wrap;
   gap: 20px;
   transition: background-color 0.3s ease; /* Add transition for hover effect */
+  margin-right: 20px;
 }
-
 
 .navbar-links-web ul li {
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
@@ -58,7 +72,6 @@
   font-style: italic; /* Set font style to Italic */
   transition: color 0.3s ease; /* Add transition for hover effect */
 }
-
 
 .navbar-links-web ul li a:hover {
   color: #0000ff; /* Change color on hover to blue */
@@ -74,6 +87,12 @@
   color: rgb(0, 0, 0);
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  margin: 0; /* Ensure no margin */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .brand-logo-mobile {
@@ -82,7 +101,8 @@
   align-items: center;
   width: 100%;
   z-index: 1002;
-  animation: scaleIn 0.5s ease-in-out;
+  animation: scaleIn 0.5s ease-in-out, float 3s ease-in-out infinite; /* Add 3D animation */
+  margin: 0; /* Ensure no margin */
 }
 
 .brand-logo-mobile img {
@@ -104,6 +124,8 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  margin: 0; /* Ensure no margin */
+  padding: 0; /* Ensure no padding */
 }
 
 .navbar-links-mobile.open {
